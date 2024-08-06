@@ -28,7 +28,7 @@
             type="search"
             class="search-input"
             id="input"
-            onclick="hide()"
+            onfocus="hide()"
           />
         </div>
 
@@ -58,7 +58,7 @@
             <i class="fa-regular fa-user user-icon"></i>
           </div>
         </div>
-        <div id="second-child" class="relative">
+        <div id="second-child" class="relative" onscroll="collapse()">
           <div class="flex flex-row mobile-search-div">
             <i class="fa-solid fa-magnifying-glass mobile-search-icon"></i>
             <input
@@ -204,6 +204,14 @@
         x.style.display = "none";
         ham.style.display = "block";
       }
+
+      let secondChild = document.getElementById("second-child");
+      let x = document.getElementById("x");
+      window.addEventListener("scroll", () => {
+        secondChild.style.display = "none";
+        x.style.display = "none";
+        ham.style.display = "block";
+      });
     </script>
   </body>
 </html>
