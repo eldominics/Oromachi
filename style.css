@@ -1,0 +1,189 @@
+/* This is general styling */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* This is styling for the header */
+
+.header-container{
+    
+    padding:35px;
+    padding-left: 20px;
+    display:flex;
+    align-items: center;
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.ham-icon{
+    font-size: 22px;
+    margin-right: 7px;
+}
+header h1{
+    margin-right: 22px;
+}
+
+.category-div{font-size: 14px;}
+.category-div a{
+    margin-right: 20px;
+    
+}
+
+.search-div{
+    flex: 0 1 30%;
+    margin: 0px auto;
+  
+}
+
+.search-div .search-input{
+    width: 100%;
+    padding: 13px;
+    border-radius: 50px ;
+    border: 0.2px solid black;
+
+}
+
+input:focus{
+   outline:none; 
+}
+
+.search-div i{
+    position: absolute;
+    top: 50px;
+    margin-left: 20px;
+    color: grey;
+   
+}
+
+.cart-icon{
+    margin-right: 10px;
+}
+
+.cart-user-div{
+    font-size: 16px;
+
+}
+
+
+
+/* This is for the section-div1 */
+
+.section-div1{
+    background-color: black;
+    text-align: center;
+    color: whitesmoke;
+    padding: 130px;
+}
+
+.section-div1 h2{
+    font-size: xx-large;
+}
+
+.section-div1 p{
+    margin-top: 20px;
+}
+
+.section-div1 button{
+    font-size: 18px;
+    border-radius: 50px;
+    border: 0.2px solid black;
+    background-color: white;
+    padding: 15px;
+    margin-top: 45px;
+
+}
+/* This is the styling dor the product section */
+
+.section-div2{
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.box{
+    flex: 0 1 20%;
+    margin-right: 12px;
+    margin-bottom: 50px;
+
+}
+.box-image{
+    width:100%;
+    border-radius: 9px;
+    
+}
+@media screen and (max-width:800px){
+    .box{
+        flex: 0 1 35%;
+        margin-right: 12px;
+        margin-bottom: 50px;
+        
+
+    }
+    
+}
+.section-div2 p{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+
+
+
+/* this is styling for the footer */
+
+
+footer{background-color: #fafafb;}
+.footer-div{
+    
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.col1, .col2, .col3{
+    margin-top: 40px;
+    margin-right: 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-div h3{
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.footer-div div p{
+    margin: 17px;
+    font-size: 12px;
+}
+
+.social-icons{
+    text-align: center;
+    font-size: 22px;
+}
+
+footer h2{
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+
+
