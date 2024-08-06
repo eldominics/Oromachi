@@ -66,6 +66,7 @@ input:focus {
 .cart-user-div {
   font-size: 16px;
 }
+
 /* styles for the mobile nav */
 
 #responsive-header {
@@ -80,7 +81,6 @@ input:focus {
 }
 .flex-row {
   flex-direction: row;
-
   align-items: center;
 }
 .flex-row-1 {
@@ -169,7 +169,7 @@ input:focus {
   padding: 15px;
   margin-top: 45px;
 }
-/* This is the styling dor the product section */
+/* This is the styling dor the product section in index.html */
 
 .section-div2 {
   width: 90%;
@@ -185,6 +185,19 @@ input:focus {
   margin-bottom: 50px;
 }
 .box-image {
+  width: 100%;
+  border-radius: 9px;
+}
+
+/* styles for the product.html */
+
+.prod-box {
+  flex: 0 0 20%;
+  margin-right: 12px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+.prod-image {
   width: 100%;
   border-radius: 9px;
 }
