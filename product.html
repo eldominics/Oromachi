@@ -6,16 +6,106 @@
     <title>Product</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
-    <div class="flex">
-      <div class="flex">
+    <header id="main-header">
+      <div class="header-container">
+        <h1><a href="">OROMACHI</a></h1>
+        <div class="category-div">
+          <a href=""> Men </a>
+          <a href=""> Women </a>
+          <a href=""> Kids</a>
+          <a href=""> Beauty & Health</a>
+          <a href="">Accessories</a>
+        </div>
+
+        <div class="search-div">
+          <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+          <input
+            type="search"
+            class="search-input"
+            id="input"
+            onfocus="hide()"
+          />
+        </div>
+
+        <div class="cart-user-div">
+          <span style="font-size: 12px">0</span>
+          <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          <i class="fa-regular fa-user user-icon"></i>
+        </div>
+      </div>
+    </header>
+
+    <header id="responsive-header">
+      <div class="flex flex-col">
+        <div class="flex flex-row" id="first-child">
+          <i
+            class="fa-solid fa-bars ham-icon"
+            id="ham"
+            onclick="toggleMenu()"
+          ></i>
+
+          <i class="fa-solid fa-x" id="x" onclick="toggleX()"></i>
+          <h1><a href="">OROMACHI</a></h1>
+
+          <div class="right-icons">
+            <span style="font-size: 12px">0</span>
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            <i class="fa-regular fa-user user-icon"></i>
+          </div>
+        </div>
+        <div id="second-child" class="relative" onscroll="collapse()">
+          <div class="flex flex-row mobile-search-div">
+            <i class="fa-solid fa-magnifying-glass mobile-search-icon"></i>
+            <input
+              type="search"
+              class="mobile-search-input"
+              id="input"
+              onfocus="hide()"
+            />
+          </div>
+          <div class="flex flex-col category-div mobile-category-div">
+            <a href=""> Men </a>
+            <a href=""> Women </a>
+            <a href=""> Kids</a>
+            <a href=""> Beauty & Health</a>
+            <a href="">Accessories</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-div">
+      <div class="cont-div">
         <section class="prod-box">
           <img src="./images/ladyred.jpeg" alt="" class="prod-img" />
-          <div class="flex flex-row">
-            <p>Lady Dress</p>
-            <p>$300</p>
+          <div class="prod-title-price-div">
+            <span class="prod-title">Elegant Lady Dress</span>
+            <span class="prod-price"> 300$</span>
           </div>
         </section>
+
+        <article class="article-box">
+          <h2 class="article-h2">Elegant Lady Dress</h2>
+          <h4 class="article-h4">Product Description</h4>
+          <p class="article-para">
+            Step into elegance with our exquisite Fancy Lady Dress. Crafted from
+            the finest silk, this dress promises unparalleled comfort and a
+            luxurious feel against the skin. The intricate lace detailing and
+            hand-sewn embellishments reflect meticulous craftsmanship, ensuring
+            each piece is a masterpiece. Designed with a flattering silhouette,
+            it gracefully accentuates your figure, making it perfect for any
+            sophisticated occasion. The rich, vibrant colors and timeless design
+            exude an aura of sophistication and charm. Elevate your wardrobe
+            with this stunning dress, where quality meets impeccable style.
+          </p>
+
+          <div class="article-btn-div">
+            <button class="buy-div">Buy Now</button>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </article>
       </div>
     </div>
   </body>

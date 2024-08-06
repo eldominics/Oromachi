@@ -191,15 +191,71 @@ input:focus {
 
 /* styles for the product.html */
 
-.prod-box {
-  flex: 0 0 20%;
-  margin-right: 12px;
-  margin-bottom: 10px;
-  width: 60%;
+.main-div {
+  margin-top: 70px;
+  padding-left: 50px;
 }
-.prod-image {
+.cont-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.prod-box {
+  flex: 1 1 45%;
+}
+.article-box {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prod-img {
   width: 100%;
   border-radius: 9px;
+}
+
+.prod-title-price-div {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.prod-title {
+  font-size: large;
+  margin-right: 5px;
+}
+.prod-price {
+  font-size: x-large;
+}
+.article-h2 {
+  margin: 30px 2px;
+}
+
+.article-h4 {
+  align-self: flex-start;
+  margin-left: 20px;
+}
+.article-para {
+  margin-top: 5px;
+  margin-left: 20px;
+  padding: 3px;
+  line-height: 35px;
+}
+
+.article-btn-div {
+  margin-top: 20px;
+}
+.buy-div {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: orange;
+}
+.add-to-cart {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
 }
 
 /* queries */
@@ -219,9 +275,57 @@ input:focus {
     display: block;
   }
 }
-
-@media screen and (min-width: 640px) {
+/* queries for product.html */
+@media screen and (min-width: 426px) {
+  .cont-div {
+    flex-direction: column;
+  }
+  .main-div {
+    padding-left: 10px;
+  }
+  .article-btn-div {
+    margin-bottom: 5px;
+  }
 }
+
+@media screen and (min-width: 300px) {
+  .cont-div {
+    flex-direction: column;
+  }
+  .main-div {
+    padding-left: 2px;
+  }
+  .article-btn-div {
+    margin-bottom: 3px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cont-div {
+    flex-direction: row;
+    align-items: center;
+  }
+  .main-div {
+    padding-left: 30px;
+  }
+  .article-btn-div {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .cont-div {
+    width: 1200px;
+    margin: 0px auto;
+  }
+  .main-div {
+    padding-left: 30px;
+  }
+  .article-btn-div {
+    margin-bottom: 5px;
+  }
+}
+/* media queries for product.html ends */
 
 .section-div2 p {
   font-weight: bold;
