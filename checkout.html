@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stripe Checkout</title>
+    <style>
+      #card-element {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      #payment-message {
+        display: none;
+        color: red;
+        margin-top: 10px;
+      }
+      #payment-message.success {
+        color: green;
+      }
+      #payment-message.error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body style="background-color: #f3f4f6">
+    <div style="display: flex; justify-content: center; margin-top: 30%">
+      <h1 style="font-size: 50px">Checkout Page</h1>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 5%">
+      <form action="">
+        <div style="margin-bottom: 30px">
+          <label for="" style="font-size: 20px">First Name:</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            style="
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: 0.5px solid #d4d4d4;
+              background-color: #fafafa;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 30px">
+          <label for="" style="font-size: 20px">Last Name:</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            style="
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: 0.5px solid #d4d4d4;
+              background-color: #fafafa;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 30px">
+          <label for="" style="font-size: 20px">Your Address:</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            style="
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: 0.5px solid #d4d4d4;
+              background-color: #fafafa;
+            "
+          />
+        </div>
+      </form>
+    </div>
+
+    <div style="display: flex; justify-content: center">
+      <p style="font-size: 15px; margin-right: 20px">
+        Product: <span style="font-size: 17px"> Elegant Lady Dress</span>
+      </p>
+      <p>Amount: 300$</p>
+    </div>
+
+    <form
+      id="payment-form"
+      class="flex flex-col"
+      style="width: 60%; margin: 10px auto"
+    >
+      <div id="card-element"></div>
+      <div style="display: flex; justify-content: center">
+        <button
+          type="submit"
+          id="submit"
+          style="
+            padding: 10px 30px;
+            border-radius: 5px;
+            border: none;
+            font-size: 25px;
+            margin-top: 20px;
+          "
+        >
+          Pay
+        </button>
+      </div>
+      <div id="payment-message"></div>
+    </form>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const stripe = Stripe(
+        "pk_test_51IjR1wAvSxhPtwyWWOmgAE3eu4gFqeeDmHk3evngnbu5f7l0e3gpMr4Hob1jNCj2p3RbBwKPp66P4j5QjK6fnHud00GF3hTaxb"
+      );
+      const elements = stripe.elements();
+      const cardElement = elements.create("card");
+
+      cardElement.mount("#card-element");
+
+      const form = document.getElementById("payment-form");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+          type: "card",
+          card: cardElement,
+        });
+
+        if (error) {
+          showMessage(error.message, "error");
+        } else {
+          const response = await fetch("/create-payment-intent", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ payment_method: paymentMethod.id }),
+          });
+
+          const paymentIntent = await response.json();
+
+          if (paymentIntent.error) {
+            showMessage(paymentIntent.error.message, "error");
+          } else {
+            const { error: confirmError } = await stripe.confirmCardPayment(
+              paymentIntent.client_secret
+            );
+            if (confirmError) {
+              showMessage(confirmError.message, "error");
+            } else {
+              showMessage("Payment successful!", "success");
+            }
+          }
+        }
+      });
+
+      function showMessage(message, type) {
+        const messageElement = document.getElementById("payment-message");
+        messageElement.textContent = message;
+        messageElement.className = type;
+        messageElement.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
