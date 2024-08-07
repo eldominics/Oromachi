@@ -378,6 +378,18 @@ footer h2 {
   }
 }
 /* queries for product.html */
+
+@media screen and (min-width: 300px) {
+  .cont-div {
+    flex-direction: column;
+  }
+  .main-div {
+    padding-left: 2px;
+  }
+  .article-btn-div {
+    margin-bottom: 3px;
+  }
+}
 @media screen and (min-width: 426px) {
   .cont-div {
     flex-direction: column;
@@ -389,16 +401,15 @@ footer h2 {
     margin-bottom: 5px;
   }
 }
-
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 725px) {
   .cont-div {
-    flex-direction: column;
+    flex-direction: row;
   }
   .main-div {
-    padding-left: 2px;
+    padding-left: 10px;
   }
   .article-btn-div {
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
 }
 

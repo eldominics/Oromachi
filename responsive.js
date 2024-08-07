@@ -36,7 +36,11 @@ function showCart() {
   let cartIcon = document.getElementById("cartIcon");
   let cartItems = document.getElementById("cartItems");
   cartIcon.addEventListener("click", () => {
-    cartItems.style.display = "block";
+    if (cartItems.style.display == "block") {
+      cartItems.style.display = "none";
+    } else {
+      cartItems.style.display = "block";
+    }
   });
 }
 
