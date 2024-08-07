@@ -257,6 +257,30 @@ input:focus {
   font-size: 20px;
   border: none;
 }
+.add-minus-btn-div {
+  margin-top: 35px;
+}
+.plus {
+  border: 1px;
+  background-color: #e5e5e5;
+  padding: 3px 30px;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.minus {
+  border: 1px;
+  background-color: #e5e5e5;
+  padding: 3px 30px;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.qty {
+  font-size: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
 /* queries */
 
