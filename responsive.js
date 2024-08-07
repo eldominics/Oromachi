@@ -22,8 +22,22 @@ function toggleX() {
 
 let secondChild = document.getElementById("second-child");
 let x = document.getElementById("x");
+let ham = document.getElementById("ham");
+let cartItems = document.getElementById("cartItems");
+let body = document.getElementById("body");
 window.addEventListener("scroll", () => {
   secondChild.style.display = "none";
   x.style.display = "none";
   ham.style.display = "block";
+  cartItems.style.display = "none";
 });
+
+function showCart() {
+  let cartIcon = document.getElementById("cartIcon");
+  let cartItems = document.getElementById("cartItems");
+  cartIcon.addEventListener("click", () => {
+    cartItems.style.display = "block";
+  });
+}
+
+showCart();

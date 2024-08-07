@@ -282,6 +282,84 @@ input:focus {
   margin-right: 30px;
 }
 
+.section-div2 p {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* this is styling for the footer */
+
+footer {
+  background-color: #fafafb;
+}
+.footer-div {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.col1,
+.col2,
+.col3 {
+  margin-top: 40px;
+  margin-right: 60px;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-div h3 {
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer-div div p {
+  margin: 17px;
+  font-size: 12px;
+}
+
+.social-icons {
+  text-align: center;
+  font-size: 22px;
+}
+
+footer h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* styling for cart items */
+
+.section-relative {
+  position: fixed;
+  right: 0;
+  top: 90px;
+  width: 300px;
+  padding: 20px;
+}
+
+#cartItems {
+  display: none;
+}
+
+.cart-stuffs {
+  display: flex;
+  flex-direction: column;
+  background-color: #cbd5e1;
+}
+.cart-div-row {
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+}
+.prod-name {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+.prod-qty {
+  font-size: 20px;
+}
 /* queries */
 
 @media screen and (max-width: 800px) {
@@ -349,51 +427,5 @@ input:focus {
     margin-bottom: 5px;
   }
 }
+
 /* media queries for product.html ends */
-
-.section-div2 p {
-  font-weight: bold;
-  font-size: 12px;
-}
-
-/* this is styling for the footer */
-
-footer {
-  background-color: #fafafb;
-}
-.footer-div {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.col1,
-.col2,
-.col3 {
-  margin-top: 40px;
-  margin-right: 60px;
-  padding: 20px;
-  text-align: center;
-}
-
-.footer-div h3 {
-  margin-bottom: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.footer-div div p {
-  margin: 17px;
-  font-size: 12px;
-}
-
-.social-icons {
-  text-align: center;
-  font-size: 22px;
-}
-
-footer h2 {
-  margin-top: 50px;
-  text-align: center;
-}

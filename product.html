@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body>
+  <body id="body">
     <header id="main-header">
       <div class="header-container">
-        <h1><a href="">OROMACHI</a></h1>
+        <h1><a href="./index.html">OROMACHI</a></h1>
         <div class="category-div">
           <a href=""> Men </a>
           <a href=""> Women </a>
@@ -34,19 +34,20 @@
         </div>
 
         <div class="cart-user-div">
-          <span style="font-size: 12px">0</span>
-          <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          <i class="fa-solid fa-cart-shopping cart-icon" id="cartIcon"></i>
           <i class="fa-regular fa-user user-icon"></i>
         </div>
       </div>
     </header>
-    <section
-      id="cart-items"
-      class="cart-stuffs relative"
-      style="background-color: red"
-    >
-      <span id="product name"> kldjfhsffg</span>
-      <span id="qty"> 0</span>
+
+    <section id="cartItems" class="cart-stuffs section-relative">
+      <h4>Cart Products</h4>
+      <!-- <div class="cart-div-row">
+        <p id="prodName" class="prod-name">ghujiuyguhijuh</p>
+        <p id="qty" class="prod-qty">9</p>
+      </div>
+
+      </div> -->
     </section>
 
     <header id="responsive-header">
@@ -59,10 +60,9 @@
           ></i>
 
           <i class="fa-solid fa-x" id="x" onclick="toggleX()"></i>
-          <h1><a href="">OROMACHI</a></h1>
+          <h1><a href="./index.html">OROMACHI</a></h1>
 
           <div class="right-icons">
-            <span style="font-size: 12px">0</span>
             <i class="fa-solid fa-cart-shopping cart-icon"></i>
             <i class="fa-regular fa-user user-icon"></i>
           </div>
@@ -93,8 +93,8 @@
         <section class="prod-box">
           <img src="./images/ladyred.jpeg" alt="" class="prod-img" />
           <div class="prod-title-price-div">
-            <span class="prod-title">Elegant Lady Dress</span>
-            <span class="prod-price"> 300$</span>
+            <span class="prod-title" id="prodTitle">Elegant Lady Dress</span>
+            <span class="prod-price" id="prodPrice"> 300$</span>
           </div>
         </section>
 
@@ -115,7 +115,7 @@
 
           <div class="article-btn-div">
             <button class="buy-div">Buy Now</button>
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" id="addToCart">Add to cart</button>
           </div>
           <div class="add-minus-btn-div">
             <span id="add" class="plus"> +</span>
